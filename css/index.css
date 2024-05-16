@@ -564,7 +564,7 @@ body {
 .para-form {
     font-weight: 500;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 1.5;
     letter-spacing: 0.02em;
     color: #ffffff;
     margin-bottom: 16px;
@@ -572,13 +572,20 @@ body {
 
 .input-form {
     display: flex;
+    gap: 24px;
 }
 
 .review-input-footer {
     border: 1px solid #ffffff;
+    color: #ffffff;
     border-radius: 4px;
     width: 264px;
     height: 40px;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    padding-left: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     background-color: transparent;
 }
 
@@ -592,7 +599,10 @@ body {
 }
 
 .input-footer-btn {
-    width: 165px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 165px;
     height: 40px;
     border-radius: 4px;
     border: none;
@@ -603,7 +613,7 @@ body {
     background: #4d5ae5;
     font-weight: 500;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 1.5;
     letter-spacing: 0.04em;
     text-align: center;
     color: #ffffff;
@@ -621,6 +631,7 @@ body {
     z-index: 99999999;
     width: 100%;
     height: 100%;
+    padding: 72px 24px 24px 24px;
     background-color: rgba(46, 47, 66, 0.4);
     opacity: 0;
     visibility: hidden;
@@ -643,12 +654,16 @@ body {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background-color: #fcfcfc;
     padding: 24px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    top: 32px;
-    right: 32px;
+    top: 24px;
+    right: 24px;
     padding: 0;
     border: none;
     background-color: transparent;
@@ -656,11 +671,12 @@ body {
     fill: #2e2f42;
     width: 24px;
     height: 24px;
-    border-radius: 100%;
+    border-radius: 50%;
     background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     stroke-width: 1px;
     stroke: rgba(0, 0, 0, 0.1);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-close-btn:hover,
@@ -669,10 +685,14 @@ body {
     background-color: #404bbf;
 }
 
+.icon-close {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .para-backdrop {
         font-weight: 500;
         font-size: 16px;
-        line-height: 150%;
+        line-height: 1.5;
         letter-spacing: 0.02em;
         text-align: center;
         color: #2e2f42;
@@ -688,11 +708,15 @@ body {
     display: block;
         font-weight: 400;
         font-size: 12px;
-        line-height: 117%;
+        line-height: 1.17;
         letter-spacing: 0.04em;
         color: #8e8f99;
         margin-bottom: 4px;
         background-color: transparent;
+}
+
+.form-icon-wrapper {
+    position: relative;
 }
 
 .review-input {
@@ -701,16 +725,14 @@ body {
     width: 100%;
     height: 40px;
     padding-left: 38px;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .review-input:focus {
     border: 1px solid #4d5ae5;
     outline: transparent;
-}
-
-.form-icon-wrapper {
-    position: relative;
 }
 
 .form-icon {
@@ -728,18 +750,18 @@ body {
     fill: #4d5ae5;
 }
 
-.form-icon-massage {
+/* .form-icon-massage {
     position: absolute;
     top: 50%;
     left: 16px;
     transform: translateY(-50%);
     fill: #2e2f42;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+} */
 
-.review-input:focus + .form-icon-massage {
+/* .review-input:focus + .form-icon-massage {
     fill: #4d5ae5;
-}
+} */
 
 .container-massage {
     margin-bottom: 16px;
@@ -747,14 +769,18 @@ body {
 
 .review-massage {
     border: 1px solid rgba(46, 47, 66, 0.4);
-        border-radius: 4px;
-        width: 100%;
-        height: 120px;
-        background-color: transparent;
-        resize: none;
-        padding: 8px 16px;
-        outline: transparent;
-        transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 4px;
+    width: 100%;
+    height: 120px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    background-color: transparent;
+    color: rgba(46, 47, 66, 0.4);
+    resize: none;
+    padding: 8px 16px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .review-massage:focus {
@@ -776,7 +802,7 @@ body {
 .checkbox-wrapper {
         font-weight: 400;
         font-size: 12px;
-        line-height: 117%;
+        line-height: 1.17;
         letter-spacing: 0.04em;
         color: #8e8f99;
 }
@@ -791,12 +817,12 @@ body {
     border-radius: 2px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     fill: transparent;
-    transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .check-box:checked + .checkbox-wrapper .form-checkbox{
     background-color: #404bbf;
-    border: 1px solid #404bbf;
+    border: none;
     fill: #f4f4fd;
 }
 
@@ -810,21 +836,22 @@ body {
 }
 
 .input-btn {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     margin-right: auto;
     margin-left: auto;
-    width: 169px;
+    min-width: 169px;
     height: 56px;
     border-radius: 4px;
     padding: 16px 32px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-    background: #4d5ae5;
+    background-color: #4d5ae5;
     font-weight: 500;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 1.5;
     letter-spacing: 0.04em;
     color: #ffffff;
     border: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
